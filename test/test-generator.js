@@ -1,10 +1,12 @@
+/*jslint node: true */
+/*global describe, it, before, beforeEach, after, afterEach */
 var mocha = require('mocha');
 var MDA = require('../MultiDimensionalArrays');
 
 var chai = require('chai');
 var expect = chai.expect;
 var should = chai.should();
- 
+
  
 describe('MultiDimensionalArray.generate', function() {
   it('should return an array of length 3, each is an array containing 3 random boolean values', function() {
@@ -21,7 +23,7 @@ describe('MultiDimensionalArray.generate', function() {
   });
   it('should return an array of length 4, containing random boolean values', function() {
     var result = [1,0,1,1] ;
-    // var result = MDA.generate([4]);
+    // var result = MDA.generate(4);
     expect(result).to.be.instanceof(Array);
     expect(result).to.have.length(4);
   });
@@ -54,4 +56,5 @@ describe('MultiDimensionalArray.generate', function() {
   });
 });
 
+// remove commented var result lines
 //expect().to.be.a."number"
