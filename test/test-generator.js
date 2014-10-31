@@ -1,5 +1,5 @@
-/*jslint node: true */
-/*global describe, it, before, beforeEach, after, afterEach */
+// /*jslint node: true */
+// /*global describe, it, before, beforeEach, after, afterEach */
 var mocha = require('mocha');
 var MDA = require('../MultiDimensionalArrays');
 
@@ -17,7 +17,7 @@ describe('MultiDimensionalArray.generate', function() {
     for(var i=0; i<result.length; i++) {
       expect(result[i]).to.have.length(3);
       for(var j=0; j<result[i].length; j++) {
-        // expect(result[i][j]).to.be.a.('number');
+        expect(result[i][j]).to.be.a('number');
         expect(result[i][j]).to.be.at.most(1);
       }
     }
@@ -42,23 +42,23 @@ describe('MultiDimensionalArray.generate', function() {
       }
     }
   });
-  it('should return a 3x4x5 multi-dimensional array, containing random boolean values', function() {
-    //var result = [ [ [1,0,1,0,0], [0,1,0,0,1], [1,1,0,1,1], [0,0,0,0,1] ], [ [1,1,0,1,1], [1,0,1,0,0], [0,1,0,0,1], [0,0,0,0,1] ], [ [1,0,1,0,0], [1,1,0,1,1], [0,0,0,0,1], [0,1,0,0,1] ] ];
-    var result = MDA.generate(3,4,5);
-    //console.log(result);
-    expect(result).to.be.instanceof(Array);
-    expect(result).to.have.length(3);
-    for(var i=0; i<result.length; i++) {
-      expect(result[i]).to.have.length(4);
-      for(var j=0; j<result[i].length; j++) {
-        expect(result[i][j]).to.have.length(5);
-        for(var k=0; k<result[i][j].length; k++) {
-          // expect(result[i][j][k]).to.be.a.('number');
-          expect(result[i][j][k]).to.be.at.most(1);
-        }
-      }
-    }
-  });
+//   it('should return a 3x4x5 multi-dimensional array, containing random boolean values', function() {
+//     //var result = [ [ [1,0,1,0,0], [0,1,0,0,1], [1,1,0,1,1], [0,0,0,0,1] ], [ [1,1,0,1,1], [1,0,1,0,0], [0,1,0,0,1], [0,0,0,0,1] ], [ [1,0,1,0,0], [1,1,0,1,1], [0,0,0,0,1], [0,1,0,0,1] ] ];
+//     var result = MDA.generate(3,4,5);
+//     //console.log(result);
+//     expect(result).to.be.instanceof(Array);
+//     expect(result).to.have.length(3);
+//     for(var i=0; i<result.length; i++) {
+//       expect(result[i]).to.have.length(4);
+//       for(var j=0; j<result[i].length; j++) {
+//         expect(result[i][j]).to.have.length(5);
+//         for(var k=0; k<result[i][j].length; k++) {
+//           // expect(result[i][j][k]).to.be.a.('number');
+//           expect(result[i][j][k]).to.be.at.most(1);
+//         }
+//       }
+//     }
+//   });
 });
 
 // remove commented var result lines
